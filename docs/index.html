@@ -48,10 +48,7 @@
     <h2 style="border:none; margin-top:0;">Research-Use-Only Access</h2>
     <p class="muted">This catalog is restricted to qualified researchers and laboratory personnel.</p>
     <label for="age-confirm"><input type="checkbox" id="age-confirm"> I confirm I am 21 years of age or older.</label>
-    <label for="attest">Typed attestation (required):</label>
-    <textarea id="attest" rows="4" placeholder="I attest that I am a qualified researcher purchasing on behalf of a laboratory for in-vitro research purposes only, and that I will not use these materials for human or animal administration."></textarea>
-    <label for="org">Laboratory / organization name:</label>
-    <input type="text" id="org" placeholder="e.g. Dept. of Biology, -- University">
+    <label for="attest-confirm" style="margin-top:4px;"><input type="checkbox" id="attest-confirm"> I am a qualified researcher purchasing on behalf of a laboratory or research organization, and I will use these materials for in-vitro research only — not for human or animal administration.</label>
     <div class="err" id="gate-err"></div>
     <button class="btn" id="gate-btn">Enter catalog</button>
     <p class="muted" style="margin-top:12px;">All products are laboratory research chemicals. Not drugs, foods, dietary supplements, or cosmetics. Not approved by the FDA for any purpose.</p>
@@ -133,7 +130,6 @@
 
 <script>
 const CATALOG = fetch('data/catalog.json').then(r=>r.json());
-const ATTEST_MIN = 120; // min chars of the attestation sentence
 
 (async () => {
   const data = await CATALOG;
@@ -158,12 +154,9 @@ const ATTEST_MIN = 120; // min chars of the attestation sentence
   btn.addEventListener('click', () => {
     const err = document.getElementById('gate-err');
     const age = document.getElementById('age-confirm').checked;
-    const attest = document.getElementById('attest').value.trim().toLowerCase();
-    const org = document.getElementById('org').value.trim();
+    const attest = document.getElementById('attest-confirm').checked;
     if (!age) return err.textContent = 'Age confirmation is required.';
-    if (attest.length < ATTEST_MIN || !attest.includes('in-vitro') || !attest.includes('human or animal administration'))
-      return err.textContent = 'Please provide the full attestation including "in-vitro" and "human or animal administration".';
-    if (org.length < 3) return err.textContent = 'Laboratory / organization name is required.';
+    if (!attest) return err.textContent = 'Please confirm the research-use attestation.';
     sessionStorage.setItem('nv_gate', '1');
     document.getElementById('gate').remove();
     document.getElementById('site').classList.remove('hidden');
@@ -196,8 +189,7 @@ const ATTEST_MIN = 120; // min chars of the attestation sentence
     out.innerHTML = `<h3>Quote request</h3>
       <pre style="font-size:.85rem; white-space:pre-wrap;">${rows.join('\n')}
 Subtotal: $${total.toFixed(2)}
-Payment preference: [institutional PO / wire / ACH]
-Organization: ${document.getElementById('org') ? '[from attestation]' : ''}</pre>
+Payment preference: [institutional PO / wire / ACH]</pre>
       <p class="muted">Send to <strong>${data.store.email}</strong> (or use the mailto button below). We reply with the current tested lot number, COA, and shipping quote.</p>
       <a class="btn" href="mailto:${data.store.email}?subject=${encodeURIComponent('Quote request — research reagents')}&body=${encodeURIComponent(rows.join('\n') + '\nSubtotal: $' + total.toFixed(2))}">Open email draft</a>`;
   });
