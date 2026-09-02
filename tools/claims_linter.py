@@ -33,7 +33,8 @@ BANNED = [
 # Terms allowed ONLY inside compliance/disclaimer contexts are handled by
 # ALLOW_CONTEXT below (lines containing these markers are exempt).
 ALLOW_CONTEXT = ["not for human", "research use only", "no ", "do not", "never",
-                 "banned word", "banned term", "not drugs", "disclaimer"]
+                 "banned word", "banned term", "not drugs", "disclaimer",
+                 "walk away", "we do not purchase"]
 
 COMPILED = [re.compile(p, re.I) for p in BANNED]
 
@@ -58,7 +59,8 @@ def main():
         paths = [Path(p) for p in sys.argv[1:]]
     else:
         root = Path(__file__).resolve().parent.parent
-        paths = [p for pat in ("store/**/*", "data/catalog.json")
+        paths = [p for pat in ("docs/index.html", "docs/data/catalog.json",
+                               "docs/data/suppliers.md")
                  for p in root.glob(pat) if p.is_file()]
     all_v = []
     for p in paths:

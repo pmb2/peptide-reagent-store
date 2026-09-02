@@ -17,7 +17,7 @@
       "price": 42.0,
       "landed_target": 11.0,
       "status": "pilot",
-      "coa": "data/coa/BPC157-5-placeholder.md",
+      "coa": "coa/BPC157-5-placeholder.md",
       "description": "Synthetic peptide supplied as a lyophilized powder for laboratory research. Sold strictly as a research reagent.",
       "notes": "Single-chain peptide, stable lyophilized. Reference retail band $25–50 per conversation data."
     },
@@ -30,7 +30,7 @@
       "price": 45.0,
       "landed_target": 12.0,
       "status": "pilot",
-      "coa": "data/coa/TB500-5-placeholder.md",
+      "coa": "coa/TB500-5-placeholder.md",
       "description": "Synthetic peptide fragment supplied as a lyophilized powder for laboratory research. Sold strictly as a research reagent.",
       "notes": "Reference retail band $30–60 per conversation data."
     },
@@ -43,7 +43,7 @@
       "price": 38.0,
       "landed_target": 9.0,
       "status": "pilot",
-      "coa": "data/coa/GHKCU-50-placeholder.md",
+      "coa": "coa/GHKCU-50-placeholder.md",
       "description": "Copper-binding tripeptide supplied as a lyophilized powder for laboratory research, including materials-science and cell-culture applications. Sold strictly as a research reagent.",
       "notes": "Internal note: this SKU carries the least regulatory heat of the three. Good hero SKU."
     }

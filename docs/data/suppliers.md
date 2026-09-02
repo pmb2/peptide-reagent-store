@@ -21,7 +21,7 @@ Status legend: lead → rfq-sent → quoted → sample-pending → approved / re
 - Won't name plant city → walk away
 - Sells GLP-1s or offers to add them → walk away
 - Offers BAC water / syringes in same box → walk away
-- Asks for full wire up front on first order → split or escrow, treat as loss risk
+- Asks for full wire up front on first order → split payment or escrow; assume loss risk
 
 ## RFQ requirements (every email must ask)
 1. Current-lot HPLC chromatogram + MS identity (images or PDF, lot-matched)

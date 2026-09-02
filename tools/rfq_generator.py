@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CATALOG = json.loads((ROOT / "data" / "catalog.json").read_text(encoding="utf-8"))
+CATALOG = json.loads((ROOT / "docs" / "data" / "catalog.json").read_text(encoding="utf-8"))
 
 
 def build_email(supplier: str, contact: str) -> str:
