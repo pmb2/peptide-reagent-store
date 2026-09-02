@@ -161,8 +161,8 @@ const ATTEST_MIN = 120; // min chars of the attestation sentence
     const attest = document.getElementById('attest').value.trim().toLowerCase();
     const org = document.getElementById('org').value.trim();
     if (!age) return err.textContent = 'Age confirmation is required.';
-    if (attest.length < ATTEST_MIN || !attest.includes('in-vitro') || !attest.includes('not for human'))
-      return err.textContent = 'Please provide the full attestation including "in-vitro" and "not for human".';
+    if (attest.length < ATTEST_MIN || !attest.includes('in-vitro') || !attest.includes('human or animal administration'))
+      return err.textContent = 'Please provide the full attestation including "in-vitro" and "human or animal administration".';
     if (org.length < 3) return err.textContent = 'Laboratory / organization name is required.';
     sessionStorage.setItem('nv_gate', '1');
     document.getElementById('gate').remove();
