@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Northvale Reagents — Laboratory Peptide Reagents</title>
+<meta name="description" content="Northvale Reagents supplies laboratory research peptides with lot-level HPLC and MS documentation. For laboratory research use only. Not for human or animal use.">
+<style>
+  :root { --ink:#1a2332; --muted:#5b6b7e; --line:#d7dee8; --paper:#ffffff; --accent:#0f4c81; --ok:#1d6b48; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family: Georgia, 'Times New Roman', serif; color:var(--ink); background:var(--paper); line-height:1.55; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom: 3px double var(--line); padding: 26px 0 18px; }
+  header h1 { font-size: 1.5rem; letter-spacing: .5px; }
+  header .tag { color: var(--muted); font-size: .92rem; margin-top: 2px; }
+  .disclaimer-bar { background:#f4f2ec; border:1px solid var(--line); padding:10px 14px; font-size:.8rem; color:#4a4436; margin:18px 0; font-family: Arial, sans-serif; }
+  nav { display:flex; gap:18px; font-family:Arial, sans-serif; font-size:.85rem; margin-top:12px; }
+  nav a { color:var(--accent); text-decoration:none; }
+  main { padding: 10px 0 60px; }
+  h2 { font-size: 1.15rem; margin: 30px 0 10px; border-bottom:1px solid var(--line); padding-bottom:6px; }
+  h3 { font-size: 1.02rem; margin: 18px 0 6px; }
+  p, li { font-size: .95rem; }
+  table { width:100%; border-collapse: collapse; margin: 14px 0; font-family: Arial, sans-serif; font-size: .88rem; }
+  th, td { border:1px solid var(--line); padding: 8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f7f9fc; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; padding:8px 16px; text-decoration:none; font-family:Arial,sans-serif; font-size:.85rem; border:none; cursor:pointer; border-radius:2px; }
+  .btn:disabled { background:#9db3c8; cursor:not-allowed; }
+  .card { border:1px solid var(--line); padding:16px 18px; margin:14px 0; }
+  footer { border-top: 3px double var(--line); padding: 20px 0 40px; color:var(--muted); font-size:.82rem; font-family:Arial,sans-serif; }
+  /* gate */
+  #gate { position:fixed; inset:0; background:#f5f6f8; z-index:50; display:flex; align-items:center; justify-content:center; padding:20px; }
+  #gate .box { max-width:560px; background:#fff; border:1px solid var(--line); padding:28px 30px; }
+  #gate label { display:block; font-family:Arial,sans-serif; font-size:.85rem; margin:12px 0 4px; }
+  #gate textarea, #gate input[type=text] { width:100%; padding:8px; border:1px solid var(--line); font-family:Arial,sans-serif; font-size:.85rem; }
+  #gate .err { color:#a02020; font-size:.8rem; font-family:Arial,sans-serif; margin-top:8px; min-height:1em; }
+  .hidden { display:none !important; }
+  .qty { width:52px; padding:4px; border:1px solid var(--line); font-family:Arial,sans-serif; }
+  .muted { color:var(--muted); font-size:.85rem; }
+  .coa { font-family:Arial,sans-serif; font-size:.8rem; }
+  .coa a { color:var(--accent); }
+</style>
+</head>
+<body>
+
+<!-- AGE + ATTESTATION GATE -->
+<div id="gate">
+  <div class="box">
+    <h2 style="border:none; margin-top:0;">Research-Use-Only Access</h2>
+    <p class="muted">This catalog is restricted to qualified researchers and laboratory personnel.</p>
+    <label for="age-confirm"><input type="checkbox" id="age-confirm"> I confirm I am 21 years of age or older.</label>
+    <label for="attest">Typed attestation (required):</label>
+    <textarea id="attest" rows="4" placeholder="I attest that I am a qualified researcher purchasing on behalf of a laboratory for in-vitro research purposes only, and that I will not use these materials for human or animal administration."></textarea>
+    <label for="org">Laboratory / organization name:</label>
+    <input type="text" id="org" placeholder="e.g. Dept. of Biology, -- University">
+    <div class="err" id="gate-err"></div>
+    <button class="btn" id="gate-btn">Enter catalog</button>
+    <p class="muted" style="margin-top:12px;">All products are laboratory research chemicals. Not drugs, foods, dietary supplements, or cosmetics. Not approved by the FDA for any purpose.</p>
+  </div>
+</div>
+
+<div id="site" class="hidden">
+<header class="wrap">
+  <h1>NORTHVALE REAGENTS</h1>
+  <div class="tag">Laboratory peptide reagents. Lot-level HPLC. Not for human use.</div>
+  <nav>
+    <a href="#catalog">Catalog</a>
+    <a href="#quality">Quality &amp; Testing</a>
+    <a href="#ordering">Ordering</a>
+    <a href="#policies">Policies</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main class="wrap">
+  <div class="disclaimer-bar">
+    FOR LABORATORY RESEARCH USE ONLY. NOT FOR HUMAN OR ANIMAL USE.
+    NOT DRUGS, FOODS, DIETARY SUPPLEMENTS, OR COSMETICS. NOT APPROVED BY THE FDA FOR ANY PURPOSE.
+  </div>
+
+  <h2>Catalog</h2>
+  <p class="muted">Lyophilized research peptides supplied with lot-specific analytical documentation.
+  Each lot ships with its own HPLC chromatogram and mass-spectrometry identity report.</p>
+  <table id="catalog-table">
+    <thead><tr><th>Catalog #</th><th>Compound</th><th>Format</th><th>Purity (current lot)</th><th>Price</th><th>COA</th><th>Qty</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <p><strong>Request quote:</strong> <span id="cart-summary" class="muted">no items selected</span></p>
+  <button class="btn" id="quote-btn">Generate quote request</button>
+  <div id="quote-out" class="card hidden"></div>
+
+  <h2>Quality &amp; Testing</h2>
+  <div class="card">
+    <ul>
+      <li>Every lot is documented with lot-specific HPLC chromatography and mass-spectrometry identity testing performed by an independent analytical laboratory.</li>
+      <li>The vial lot number, certificate of analysis, and lab report lot number always match.</li>
+      <li>Lots that do not pass independent verification are never sold. They are documented and destroyed.</li>
+      <li>Retain samples of every received lot are archived.</li>
+      <li>Materials are stored sealed, protected from light and moisture until dispatch.</li>
+    </ul>
+  </div>
+
+  <h2>Ordering</h2>
+  <p>We supply verified research organizations, laboratories, and principal investigators.
+  Orders are processed as quotes: submit your request and our team confirms availability of
+  the current tested lot, shipping, and payment by institutional purchase order, wire/ACH,
+  or other approved laboratory payment methods.</p>
+  <ul>
+    <li>No consumer sales. No personal-use orders. Orders that cannot describe an institutional research context are cancelled and refunded.</li>
+    <li>We do not sell reagents that duplicate FDA-approved drug molecules.</li>
+    <li>We do not sell administration supplies of any kind.</li>
+    <li>Shipping: domestic carriers, ambient temperature, sealed secondary packaging.</li>
+  </ul>
+
+  <h2 id="policies">Policies</h2>
+  <div class="card">
+    <h3>Intended use restriction</h3>
+    <p id="full-disclaimer" class="muted"></p>
+    <h3>Returns</h3>
+    <p>Unopened, intact vials may be returned within 14 days of delivery for replacement or refund of the reagent cost. Opened or temperature-abused materials cannot be accepted.</p>
+    <h3>Privacy</h3>
+    <p>Customer organization information is used solely for order processing and regulatory documentation. We never sell or share contact data.</p>
+  </div>
+
+  <h2 id="contact">Contact</h2>
+  <p id="contact-block"></p>
+</main>
+
+<footer class="wrap">
+  <div id="footer-entity"></div>
+  <div style="margin-top:8px;">© 2026 Northvale Reagents. All products sold as laboratory research chemicals for in-vitro use only.</div>
+</footer>
+</div>
+
+<script>
+const CATALOG = fetch('data/catalog.json').then(r=>r.json());
+const ATTEST_MIN = 120; // min chars of the attestation sentence
+
+(async () => {
+  const data = await CATALOG;
+  document.getElementById('full-disclaimer').textContent = data.store.disclaimer_full;
+  document.getElementById('footer-entity').textContent = data.store.entity + ' · ' + data.store.email;
+  document.getElementById('contact-block').innerHTML =
+    data.store.entity + '<br>Email: ' + data.store.email +
+    '<br>Phone: [pending LLC line]<br>Address: [pending NY registered address]';
+
+  const tbody = document.querySelector('#catalog-table tbody');
+  data.products.forEach(p => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${p.sku}</td><td>${p.name}</td><td>${p.size}</td>
+      <td>${p.purity_claim}</td><td>$${p.price.toFixed(2)}</td>
+      <td class="coa"><a href="${p.coa}" target="_blank">lot COA</a></td>
+      <td><input class="qty" type="number" min="0" max="50" value="0" data-sku="${p.sku}" data-price="${p.price}"></td>`;
+    tbody.appendChild(tr);
+  });
+
+  // gate
+  const btn = document.getElementById('gate-btn');
+  btn.addEventListener('click', () => {
+    const err = document.getElementById('gate-err');
+    const age = document.getElementById('age-confirm').checked;
+    const attest = document.getElementById('attest').value.trim().toLowerCase();
+    const org = document.getElementById('org').value.trim();
+    if (!age) return err.textContent = 'Age confirmation is required.';
+    if (attest.length < ATTEST_MIN || !attest.includes('in-vitro') || !attest.includes('not for human'))
+      return err.textContent = 'Please provide the full attestation including "in-vitro" and "not for human".';
+    if (org.length < 3) return err.textContent = 'Laboratory / organization name is required.';
+    sessionStorage.setItem('nv_gate', '1');
+    document.getElementById('gate').remove();
+    document.getElementById('site').classList.remove('hidden');
+  });
+  if (sessionStorage.getItem('nv_gate')) {
+    document.getElementById('gate').remove();
+    document.getElementById('site').classList.remove('hidden');
+  }
+
+  // cart -> quote
+  document.getElementById('quote-btn').addEventListener('click', () => {
+    const qtys = [...document.querySelectorAll('.qty')].filter(q => +q.value > 0);
+    const out = document.getElementById('quote-out');
+    if (!qtys.length) { out.classList.remove('hidden'); out.innerHTML = '<p class="muted">Select quantities first.</p>'; return; }
+    let total = 0; const rows = qtys.map(q => {
+      const line = +q.value * +q.dataset.price; total += line;
+      return `${q.dataset.sku} × ${q.value} — $${line.toFixed(2)}`;
+    });
+    out.classList.remove('hidden');
+    out.innerHTML = `<h3>Quote request</h3>
+      <pre style="font-size:.85rem; white-space:pre-wrap;">${rows.join('\n')}
+Subtotal: $${total.toFixed(2)}
+Payment preference: [institutional PO / wire / ACH]
+Organization: ${document.getElementById('org') ? '[from attestation]' : ''}</pre>
+      <p class="muted">Send to <strong>${data.store.email}</strong> (or use the mailto button below). We reply with the current tested lot number, COA, and shipping quote.</p>
+      <a class="btn" href="mailto:${data.store.email}?subject=${encodeURIComponent('Quote request — research reagents')}&body=${encodeURIComponent(rows.join('\n') + '\nSubtotal: $' + total.toFixed(2))}">Open email draft</a>`;
+  });
+})();
+</script>
+</body>
+</html>

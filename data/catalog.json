@@ -1,0 +1,55 @@
+{
+  "store": {
+    "name": "Northvale Reagents",
+    "tagline": "Laboratory peptide reagents. Lot-level HPLC. Not for human use.",
+    "entity": "[LLC NAME PENDING — NY LLC, Glenville/Schenectady County office]",
+    "email": "orders@northvalereagents.com",
+    "disclaimer_short": "FOR LABORATORY RESEARCH USE ONLY. NOT FOR HUMAN OR ANIMAL USE. NOT DRUGS, FOODS, DIETARY SUPPLEMENTS, OR COSMETICS.",
+    "disclaimer_full": "All products sold by Northvale Reagents are manufactured and supplied as laboratory research chemicals for in-vitro experimental use only. They are not drugs, foods, dietary supplements, or cosmetics, and are not approved by the FDA for any purpose. They are sold only to qualified research professionals and organizations. By purchasing, you attest that you are a qualified researcher purchasing on behalf of a laboratory, that you will use these materials solely for in-vitro research, and that you understand they are not for human or veterinary use of any kind."
+  },
+  "products": [
+    {
+      "sku": "BPC157-5",
+      "name": "BPC-157",
+      "size": "5 mg vial, lyophilized",
+      "purity_claim": "≥98% by HPLC (per current lot COA)",
+      "cas": "137525-51-0",
+      "price": 42.0,
+      "landed_target": 11.0,
+      "status": "pilot",
+      "coa": "data/coa/BPC157-5-placeholder.md",
+      "description": "Synthetic peptide supplied as a lyophilized powder for laboratory research. Sold strictly as a research reagent.",
+      "notes": "Single-chain peptide, stable lyophilized. Reference retail band $25–50 per conversation data."
+    },
+    {
+      "sku": "TB500-5",
+      "name": "TB-500 (Thymosin β-4 fragment)",
+      "size": "5 mg vial, lyophilized",
+      "purity_claim": "≥98% by HPLC (per current lot COA)",
+      "cas": "77591-33-4",
+      "price": 45.0,
+      "landed_target": 12.0,
+      "status": "pilot",
+      "coa": "data/coa/TB500-5-placeholder.md",
+      "description": "Synthetic peptide fragment supplied as a lyophilized powder for laboratory research. Sold strictly as a research reagent.",
+      "notes": "Reference retail band $30–60 per conversation data."
+    },
+    {
+      "sku": "GHKCU-50",
+      "name": "GHK-Cu (Copper tripeptide-1)",
+      "size": "50 mg vial, lyophilized",
+      "purity_claim": "≥98% by HPLC (per current lot COA)",
+      "cas": "49557-75-7",
+      "price": 38.0,
+      "landed_target": 9.0,
+      "status": "pilot",
+      "coa": "data/coa/GHKCU-50-placeholder.md",
+      "description": "Copper-binding tripeptide supplied as a lyophilized powder for laboratory research, including materials-science and cell-culture applications. Sold strictly as a research reagent.",
+      "notes": "Internal note: this SKU carries the least regulatory heat of the three. Good hero SKU."
+    }
+  ],
+  "blocked_categories": [
+    "molecules identical to FDA-approved drug products (GLP-1 class and similar) are never stocked",
+    "see docs/KNOWLEDGE-BASE.md section 1 for the full prohibited list"
+  ]
+}
