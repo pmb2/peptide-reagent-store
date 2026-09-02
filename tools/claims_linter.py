@@ -23,7 +23,7 @@ BANNED = [
     r"inject\w*", r"sub-?q\b", r"subcutaneous", r"pin(ned|ning)?\b",
     r"dosage", r"\bdose[sd]?\b", r"\bdosing\b", r"\bunits?\b.*(syringe|per day|daily)",
     r"reconstitut\w*", r"bacteriostatic", r"\bbac water\b", r"\bcycle\b",
-    r"stack\w*", r"protocol\w*", r"before.{0,12}after", r"results",
+    r"stack\w*", r"protocol\w*", r"before.{0,12}after", r"\bresults\b",
     # consumer-funnel language
     r"peptide therapy", r"ozempic", r"semaglutide", r"tirzepatide",
     r"tesamorelin", r"retatrutide", r"ghrp", r"\bbio-?hack\w*",
@@ -42,7 +42,12 @@ COMPILED = [re.compile(p, re.I) for p in BANNED]
 def scan_text(text: str, filename: str = "<text>") -> list[str]:
     violations = []
     for i, line in enumerate(text.splitlines(), 1):
-        # Exempt obvious prohibition/compliance lines ("We do not sell...", disclaimers)
+        # Skip CSS/JS code lines (only scan human-readable copy)
+        stripped = line.strip()
+        if stripped.startswith((".", "#", "@", "}", "{", "<!--", "//", "/*")) or \
+           any(k in stripped for k in ("{", "}", "transition:", "function(", "=>", "var(", "const ", "return ")):
+            continue
+        # Exempt obvious prohibition/compliance lines
         low = line.lower()
         if any(ctx in low for ctx in ALLOW_CONTEXT):
             continue
