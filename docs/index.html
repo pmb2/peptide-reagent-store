@@ -6,160 +6,200 @@
 <title>Northvale Reagents — Laboratory Peptide Reagents, Lot-Verified</title>
 <meta name="description" content="Northvale Reagents supplies laboratory research peptides with lot-level HPLC and mass-spectrometry documentation from independent laboratories. For laboratory research use only. Not for human or animal use.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d7a6f'/%3E%3Cpath d='M10 22V10l12 12V10' stroke='%23fbfbfa' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ============================================================
+   Northvale Reagents — fusion design system
+   Apple: cinematic light/dark section rhythm, glass nav, pill CTAs
+   Stripe: weight-300 display type, tight tracking, tinted shadows
+   Brand: teal anchor (#0d7a6f), paper + near-black neutrals
+   ============================================================ */
 :root{
-  --paper:#fbfbfa; --panel:#f1f5f3; --ink:#121a1e; --muted:#5a6a70;
-  --line:#dde4e1; --line-soft:#e8eeeb; --accent:#0d7a6f; --accent-deep:#0a5c54;
-  --accent-soft:#e2efec; --warn-bg:#f4f3ea; --warn-ink:#5d5738;
-  --radius:10px; --maxw:1120px;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --paper:#fafafa; --panel:#f5f5f7; --ink:#1d1d1f; --ink-2:rgba(0,0,0,.72);
+  --muted:#6e6e73; --line:#e5e5ea; --line-soft:#ececf0;
+  --dark:#0c0d0e; --dark-2:#161819; --dark-line:#242627; --dark-text:#f5f5f7;
+  --dark-muted:#a1a1a6; --accent:#0d7a6f; --accent-deep:#0a5c54; --accent-bright:#2fb3a4;
+  --accent-soft:#e2efec;
+  --radius:8px; --radius-lg:14px; --maxw:1120px;
+  --shadow-card: 0 2px 6px rgba(15,42,38,.05), 0 12px 32px -8px rgba(15,42,38,.12);
+  --shadow-lift: 0 18px 44px -18px rgba(15,42,38,.28), 0 8px 20px -12px rgba(0,0,0,.10);
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --mono:ui-monospace,'SF Mono',SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.47;font-size:16px;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:var(--accent-deep)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-h1,h2,h3{letter-spacing:-0.02em;line-height:1.15;font-weight:650}
-h2{font-size:1.7rem;margin-bottom:14px}
-h3{font-size:1.05rem;margin-bottom:6px}
-.kicker{font-size:.8rem;font-weight:600;color:var(--accent-deep);letter-spacing:.02em;margin-bottom:10px}
-.lede{color:var(--muted);max-width:60ch}
+h1,h2,h3{font-weight:600;letter-spacing:-.022em;line-height:1.08}
+h2{font-size:2.3rem;letter-spacing:-.028em}
+h3{font-size:1.25rem;line-height:1.2}
+.lede{color:var(--muted);max-width:58ch;font-size:1.06rem}
+.mono-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-deep);font-weight:500}
+.mono-label.on-dark{color:#4fd0bc}
 
-/* top bar */
-.topbar{background:#121a1e;color:#c8d4d1;font-size:.78rem;padding:7px 0}
-.topbar .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.topbar strong{color:#fff;font-weight:600}
-
-/* header */
-header.site{border-bottom:1px solid var(--line);background:rgba(251,251,250,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.wordmark{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.01em;font-size:1.02rem;text-decoration:none;color:var(--ink)}
-.wordmark svg{flex:none}
-nav.main{display:flex;gap:26px}
-nav.main a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500}
+/* ── glass nav (Apple) ── */
+header.site{position:sticky;top:0;z-index:40;background:rgba(250,250,250,.78);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.wordmark{display:flex;align-items:center;gap:9px;font-weight:600;font-size:.98rem;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+nav.main{display:flex;gap:28px;align-items:center}
+nav.main a{color:rgba(0,0,0,.72);text-decoration:none;font-size:.88rem;font-weight:400;transition:color .15s}
 nav.main a:hover{color:var(--accent-deep)}
-@media(max-width:760px){nav.main{display:none}}
+.nav-cta{background:var(--accent);color:#fff!important;padding:7px 16px;border-radius:980px;font-weight:500!important}
+.nav-cta:hover{background:var(--accent-deep)}
+@media(max-width:820px){nav.main a:not(.nav-cta){display:none}}
 
-/* buttons */
-.btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--radius);padding:11px 20px;
-  font-family:var(--sans);font-size:.92rem;font-weight:600;text-decoration:none;cursor:pointer;border:1px solid transparent;
-  transition:background .15s ease,transform .1s ease}
-.btn:active{transform:translateY(1px)}
+/* ── hero (Apple cinematic) ── */
+.hero{background:var(--dark);color:var(--dark-text)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center;padding-top:76px;padding-bottom:76px}
+.hero h1{font-size:clamp(2.5rem,4.6vw,3.7rem);font-weight:600;line-height:1.06;letter-spacing:-.03em;margin-bottom:18px}
+.hero h1 .accent{color:#4fd0bc}
+.hero .lede{color:var(--dark-muted);font-size:1.15rem;max-width:46ch;margin-bottom:30px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:980px;padding:12px 26px;font-family:var(--sans);font-size:.95rem;font-weight:500;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .16s ease,border-color .15s ease,transform .12s ease}
+.btn:active{transform:scale(.98)}
 .btn-primary{background:var(--accent);color:#fff}
-.btn-primary:hover{background:var(--accent-deep)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--accent);color:var(--accent-deep)}
+.btn-primary:hover{background:#0f8d80}
+.btn-pill-ghost{background:transparent;color:#4fd0bc;border-color:rgba(79,208,188,.45)}
+.btn-pill-ghost:hover{border-color:#4fd0bc;background:rgba(79,208,188,.08)}
+.hero-ctas .pill-link{color:#4fd0bc;font-size:.9rem;text-decoration:none;border-bottom:1px solid rgba(79,208,188,.4);padding-bottom:1px}
+.hero-visual{position:relative}
+.hero-visual .photo{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lift,0 30px 80px -20px rgba(0,0,0,.6))}
+.hero-visual img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.hero-visual .float-doc{position:absolute;right:-14px;bottom:-22px;background:rgba(22,24,25,.92);border:1px solid rgba(79,208,188,.35);backdrop-filter:blur(12px);border-radius:12px;padding:14px 18px;box-shadow:0 24px 60px -12px rgba(0,0,0,.55);min-width:230px}
+.float-doc .mono-label{font-size:.62rem;color:#4fd0bc;margin-bottom:6px}
+.float-doc .lot-line{font-family:var(--mono);font-size:.78rem;color:var(--dark-text);display:flex;justify-content:space-between;gap:14px}
+.float-doc .pass{color:#4fd0bc;font-weight:600}
+.photo-credit{font-size:.68rem;color:#6e6e73;margin-top:14px}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:44px;padding-top:48px;padding-bottom:48px}.hero-visual{max-width:560px}}
 
-/* hero */
-.hero{padding:64px 0 56px}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(2.1rem,4.2vw,3.1rem);margin-bottom:16px}
-.hero h1 em{font-style:normal;color:var(--accent-deep)}
-.hero p.lede{font-size:1.05rem;margin-bottom:26px}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.hero-photo{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 32px rgba(18,26,30,.09)}
-.hero-photo img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.photo-credit{font-size:.72rem;color:var(--muted);margin-top:8px}
-@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;gap:32px}.hero{padding:40px 0}}
-
-/* fact strip */
-.facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel)}
+/* ── marquee fact strip (Apple rhythm) ── */
+.facts{background:var(--dark-2);border-top:1px solid var(--dark-line,#242424);border-bottom:1px solid var(--dark-line,#242424)}
 .facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.fact{padding:22px 20px;border-left:1px solid var(--line)}
+.fact{padding:20px 22px;border-left:1px solid var(--dark-line,#242424)}
 .fact:first-child{border-left:none}
-.fact b{display:block;font-size:.95rem;margin-bottom:3px}
-.fact span{font-size:.82rem;color:var(--muted)}
-@media(max-width:860px){.facts .wrap{grid-template-columns:1fr 1fr}.fact{border-top:1px solid var(--line)}.fact:nth-child(-n+2){border-top:none}.fact:nth-child(odd){border-left:none}}
+.fact b{display:block;font-size:.9rem;font-weight:600;color:var(--dark-text);margin-bottom:2px}
+.fact span{font-size:.78rem;color:var(--dark-muted)}
+@media(max-width:820px){.facts .wrap{grid-template-columns:1fr 1fr}.fact{border-top:1px solid #242424}.fact:nth-child(-n+2){border-top:none}.fact:nth-child(odd){border-left:none}}
 
-/* sections */
-section{padding:64px 0}
-section.alt{background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.section-head{max-width:56ch;margin-bottom:36px}
+/* ── sections ── */
+section{padding:92px 0}
+section.pad-sm{padding:64px 0}
+@media(max-width:820px){section{padding:56px 0}}
+.section-head{max-width:60ch;margin-bottom:44px}
+.section-head h2{margin-bottom:12px}
+.section-head .lede{font-size:1.02rem}
 
-/* catalog */
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:960px){.products{grid-template-columns:1fr}}
-.product{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:0;transition:border-color .15s ease}
-.product:hover{border-color:var(--accent)}
-.product .sku-row{display:flex;justify-content:space-between;align-items:baseline;font-size:.78rem;color:var(--muted);margin-bottom:10px}
-.product .sku-row .price{font-size:1.35rem;font-weight:700;color:var(--ink);letter-spacing:-.02em}
-.product .sku-row .cat{font-family:ui-monospace,Menlo,Consolas,monospace}
-.product h3{font-size:1.18rem}
-.product .format{color:var(--muted);font-size:.88rem;margin-bottom:14px}
-.spec{border-top:1px solid var(--line-soft);padding:10px 0;font-size:.85rem;display:flex;justify-content:space-between;gap:12px}
+/* ── catalog (Stripe card elevation) ── */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:980px){.products{grid-template-columns:1fr}}
+.product{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;display:flex;flex-direction:column;box-shadow:var(--shadow-card);transition:box-shadow .2s ease,transform .2s ease}
+.product:hover{box-shadow:var(--shadow-lift);transform:translateY(-2px)}
+.product .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.product .sku{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.product .price{font-size:1.7rem;font-weight:600;letter-spacing:-.03em}
+.product .price small{font-size:.78rem;font-weight:400;color:var(--muted)}
+.product h3{font-size:1.3rem;margin-bottom:4px}
+.product .format{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.spec{border-top:1px solid var(--line-soft,#ececf0);padding:10px 0;font-size:.86rem;display:flex;justify-content:space-between;gap:12px}
 .spec span{color:var(--muted)}
-.spec b{font-weight:600;text-align:right}
-.product .actions{margin-top:auto;padding-top:18px;display:flex;gap:10px;align-items:center}
-.product .actions a.coa{font-size:.82rem;font-weight:600;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
-.qty{width:64px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:.9rem}
-.qty:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
-.add{background:var(--accent-soft);color:var(--accent-deep);border:none;border-radius:8px;padding:9px 14px;font-weight:600;font-size:.85rem;cursor:pointer}
-.add:hover{background:#d2e6e1}
+.spec b{font-weight:500;text-align:right}
+.stock-pill{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:980px;margin-bottom:14px}
+.stock-pill.ok{background:rgba(13,122,111,.1);color:var(--accent-deep);border:1px solid rgba(13,122,111,.25)}
+.product .actions{margin-top:auto;padding-top:20px;display:flex;gap:10px;align-items:center}
+.product .actions a.coa{font-size:.82rem;font-weight:500;text-decoration:none;color:var(--accent-deep);margin-left:auto}
+.product .actions a.coa:hover{text-decoration:underline}
+.qty{width:60px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:.9rem}
+.qty:focus{outline:2px solid var(--accent);outline-offset:1px}
+.add{background:var(--accent);color:#fff;border:none;border-radius:980px;padding:9px 18px;font-weight:500;font-size:.85rem;cursor:pointer;transition:background .15s}
+.add:hover{background:#0f8d80}
+.order-note{font-size:.82rem;color:var(--muted);margin-top:20px;max-width:64ch}
 
-/* sticky quote bar */
-#quotebar{position:fixed;left:0;right:0;bottom:0;background:#121a1e;color:#fff;z-index:30;transform:translateY(100%);transition:transform .25s ease}
-#quotebar.show{transform:translateY(0)}
-#quotebar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 24px}
-#quotebar .summary{font-size:.9rem}
-#quotebar .summary b{color:#8fd6cb}
+/* ── dark quality section (Apple scene) ── */
+.dark{background:var(--dark);color:var(--dark-text)}
+.dark .section-head .lede{color:var(--dark-muted)}
+.dark .mono-label{color:#4fd0bc}
+.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(max-width:1020px){.pipeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pipeline{grid-template-columns:1fr}}
+.stage{background:var(--dark-2);border:1px solid #242424;border-radius:12px;padding:20px}
+.stage .num{width:28px;height:28px;border-radius:980px;background:rgba(79,208,188,.12);border:1px solid rgba(79,208,188,.3);color:#4fd0bc;font-weight:600;font-size:.8rem;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.stage b{display:block;font-size:.95rem;font-weight:600;margin-bottom:4px;color:var(--dark-text)}
+.stage span{font-size:.8rem;color:var(--dark-muted);line-height:1.45;display:block}
 
-/* pipeline */
-.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-@media(max-width:960px){.pipeline{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.pipeline{grid-template-columns:1fr}}
-.stage{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
-.stage .num{width:30px;height:30px;border-radius:50%;background:var(--accent-soft);color:var(--accent-deep);font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
-.stage b{display:block;font-size:.95rem;margin-bottom:4px}
-.stage span{font-size:.82rem;color:var(--muted)}
+/* ── comparison strip ── */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:860px){.comparison{grid-template-columns:1fr}}
+.compare-card{border-radius:var(--radius-lg);padding:30px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-card)}
+.compare-us{border:1.5px solid rgba(13,122,111,.5)}
+.compare-card .tag{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;display:block}
+.compare-card ul{list-style:none}
+.compare-card li{padding:9px 0 9px 30px;font-size:.92rem;position:relative;border-bottom:1px solid var(--line-soft,#ececf0)}
+.compare-card li:last-child{border-bottom:none}
+.compare-card li::before{content:"";position:absolute;left:2px;top:14px;width:17px;height:17px;border-radius:5px;background-size:13px;background-repeat:no-repeat;background-position:center}
+.compare-card.us li::before{background-color:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%230a5c54' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.compare-card.them li::before{background-color:#f0f0f2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%23a0a0a5' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:13px;background-repeat:no-repeat;background-position:center}
+.compare-card.them{background:var(--panel,#f5f5f7)}
+.compare-card.them li{color:var(--muted)}
 
-/* documentation */
-.docs-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-@media(max-width:860px){.docs-grid{grid-template-columns:1fr}}
-.checklist{list-style:none}
-.checklist li{padding:12px 0 12px 34px;border-bottom:1px solid var(--line-soft);font-size:.95rem;position:relative}
-.checklist li:last-child{border-bottom:none}
-.checklist li::before{content:"";position:absolute;left:2px;top:16px;width:18px;height:18px;border-radius:5px;background:var(--accent-soft);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' stroke='%230a5c54' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:14px;background-repeat:no-repeat;background-position:center}
-.coa-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px}
-.coa-card h3{margin-bottom:12px}
-.coa-card .file{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line-soft);border-radius:8px;margin-top:10px;font-size:.85rem;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
-
-/* ordering steps */
-.order-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step}
+/* ── ordering ── */
+.order-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:860px){.order-steps{grid-template-columns:1fr}}
-.ostep{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
-.ostep .step-label{font-size:.78rem;font-weight:700;color:var(--accent-deep);margin-bottom:8px}
+.ostep{background:#fff;border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-card)}
+.ostep .step-label{font-size:.7rem;font-weight:600;letter-spacing:.09em;color:var(--accent-deep);margin-bottom:10px;font-family:var(--mono);text-transform:uppercase}
 .ostep p{font-size:.9rem;color:var(--muted)}
+.ostep h3{font-size:1.1rem;margin-bottom:6px}
 
-/* policies */
-details{border-bottom:1px solid var(--line-soft)}
-details summary{cursor:pointer;padding:16px 0;font-weight:600;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center}
-details summary::after{content:"+";font-size:1.2rem;color:var(--muted);font-weight:400}
+/* ── CTA band (Stripe dark brand moment) ── */
+.cta-band{background:linear-gradient(135deg,#0c0d0e 0%,#123f39 100%);color:#fff;border-radius:20px;padding:56px;display:flex;justify-content:space-between;align-items:center;gap:32px}
+@media(max-width:860px){.cta-band{flex-direction:column;align-items:flex-start;padding:40px}}
+.cta-band h2{font-size:1.9rem;margin-bottom:8px}
+.cta-band p{color:rgba(255,255,255,.72);max-width:48ch}
+.cta-band .btn-primary{background:#fff;color:#0a5c54}
+.cta-band .btn-primary:hover{background:#e8f5f2}
+
+/* ── policies ── */
+details{border-bottom:1px solid var(--line-soft,#ececf0)}
+details summary{cursor:pointer;padding:17px 0;font-weight:500;font-size:.98rem;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";font-size:1.25rem;color:var(--muted);font-weight:300;transition:transform .2s}
 details[open] summary::after{content:"−"}
 details .body{padding:0 0 18px;color:var(--muted);font-size:.9rem;max-width:70ch}
 
-/* notice */
-.notice{background:var(--warn-bg);border:1px solid #e4e0c8;border-radius:var(--radius);padding:14px 18px;font-size:.82rem;color:var(--warn-ink)}
+/* ── notice ── */
+.notice{background:#f4f3ea;border:1px solid #e4e0c8;border-radius:var(--radius);padding:14px 18px;font-size:.83rem;color:#5d5738}
 
-/* footer */
-footer{background:#121a1e;color:#9fb0ac;padding:48px 0 32px;font-size:.85rem}
-footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-@media(max-width:860px){footer .wrap{grid-template-columns:1fr}}
-footer h4{color:#fff;font-size:.85rem;margin-bottom:12px;font-weight:600}
-footer a{color:#8fd6cb;text-decoration:none}
-footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font-size:.75rem;color:#6d807c}
+/* ── footer ── */
+footer{background:var(--dark);color:var(--dark-muted);padding:64px 0 36px;font-size:.86rem}
+footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px}
+@media(max-width:820px){footer .wrap{grid-template-columns:1fr}}
+footer h4{color:var(--dark-text);font-size:.85rem;margin-bottom:14px;font-weight:600}
+footer a{color:#4fd0bc;text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .legal{border-top:1px solid #242424;margin-top:44px;padding-top:22px;font-size:.74rem;color:#7a7a80}
 
-/* gate */
-#gate{position:fixed;inset:0;background:#121a1e;z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}
-#gate .box{max-width:520px;width:100%;background:var(--paper);border-radius:16px;padding:36px}
-#gate .mark{margin-bottom:18px}
-#gate h2{font-size:1.45rem;margin-bottom:8px;border:none}
-#gate .sub{color:var(--muted);font-size:.9rem;margin-bottom:20px}
-.gate-check{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;cursor:pointer;transition:border-color .15s ease}
-.gate-check:hover{border-color:var(--accent)}
+/* ── sticky quote bar ── */
+#quotebar{position:fixed;left:0;right:0;bottom:0;background:rgba(12,13,14,.92);backdrop-filter:blur(16px);color:#fff;z-index:35;transform:translateY(110%);transition:transform .3s cubic-bezier(.32,.72,0,1);border-top:1px solid rgba(255,255,255,.08)}
+#quotebar.show{transform:translateY(0)}
+#quotebar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 24px}
+#quotebar .summary{font-size:.9rem}
+#quotebar .summary b{color:#4fd0bc;font-weight:600}
+
+/* ── gate ── */
+#gate{position:fixed;inset:0;background:var(--dark);z-index:60;display:flex;align-items:center;justify-content:center;padding:20px}
+#gate .box{max-width:520px;width:100%;background:var(--paper);border-radius:20px;padding:40px;box-shadow:0 40px 120px -30px rgba(0,0,0,.8)}
+#gate .mark{margin-bottom:20px}
+#gate h2{font-size:1.5rem;margin-bottom:8px}
+#gate .sub{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+.gate-check{display:flex;gap:12px;align-items:flex-start;padding:15px;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;cursor:pointer;transition:border-color .15s,background .15s}
+.gate-check:hover{border-color:var(--accent);background:rgba(13,122,111,.03)}
 .gate-check input{margin-top:3px;width:17px;height:17px;accent-color:var(--accent);flex:none;cursor:pointer}
 .gate-check span{font-size:.88rem;line-height:1.5}
-#gate-err{color:#a12d2d;font-size:.82rem;margin:6px 0 12px;min-height:1.2em}
+#gate-err{color:#c53030;font-size:.83rem;margin:6px 0 14px;min-height:1.2em}
 .hidden{display:none!important}
 </style>
 </head>
@@ -168,38 +208,31 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
 <!-- ACCESS GATE -->
 <div id="gate">
   <div class="box">
-    <div class="mark"><svg width="34" height="34" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0d7a6f"/><path d="M10 22V10l12 12V10" stroke="#fbfbfa" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="mark"><svg width="36" height="36" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0d7a6f"/><path d="M10 22V10l12 12V10" stroke="#fafafa" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <h2>Research professionals only</h2>
     <p class="sub">This catalog supplies laboratory research chemicals. Confirm both to continue.</p>
     <label class="gate-check"><input type="checkbox" id="age-confirm"><span>I am 21 years of age or older.</span></label>
     <label class="gate-check"><input type="checkbox" id="attest-confirm"><span>I am a qualified researcher purchasing on behalf of a laboratory or research organization, and I will use these materials for in-vitro research only, not for human or animal administration.</span></label>
     <div id="gate-err"></div>
     <button class="btn btn-primary" id="gate-btn" style="width:100%;justify-content:center">Enter the catalog</button>
-    <p class="sub" style="margin:16px 0 0;font-size:.78rem">All products are laboratory research chemicals. Not drugs, foods, dietary supplements, or cosmetics. Not approved by the FDA for any purpose.</p>
+    <p class="sub" style="margin:18px 0 0;font-size:.76rem">All products are laboratory research chemicals. Not drugs, foods, dietary supplements, or cosmetics. Not approved by the FDA for any purpose.</p>
   </div>
 </div>
 
 <div id="site" class="hidden">
 
-<div class="topbar">
-  <div class="wrap">
-    <div><strong>For laboratory research use only.</strong> Not for human or animal use.</div>
-    <div>Lot documents available for every vial</div>
-  </div>
-</div>
-
 <header class="site">
   <div class="wrap">
     <a class="wordmark" href="#top">
-      <svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0d7a6f"/><path d="M10 22V10l12 12V10" stroke="#fbfbfa" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="26" height="26" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0d7a6f"/><path d="M10 22V10l12 12V10" stroke="#fafafa" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       NORTHVALE REAGENTS
     </a>
     <nav class="main">
       <a href="#catalog">Catalog</a>
       <a href="#quality">Quality</a>
-      <a href="#docs">Documentation</a>
+      <a href="#compare">Why us</a>
       <a href="#ordering">Ordering</a>
-      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#catalog">Request a quote</a>
     </nav>
   </div>
 </header>
@@ -210,28 +243,32 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
 <div class="hero">
   <div class="wrap">
     <div>
-      <div class="kicker">Research reagent distributor</div>
-      <h1>Peptide reagents, verified at the <em>lot level</em>.</h1>
-      <p class="lede">Every vial we ship is backed by independent HPLC and mass-spectrometry documents for its exact lot. No passing analysis, no sale.</p>
+      <div class="mono-label">Laboratory research reagents · RUO</div>
+      <h1 style="margin-top:14px">Every vial carries its own <span class="accent">proof of purity</span>.</h1>
+      <p class="lede">Independent HPLC and mass-spectrometry documents for the exact lot you receive. If a lot does not pass, it never goes on sale.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary" href="#catalog">Browse the catalog</a>
-        <a class="btn btn-ghost" href="#quality">How verification works</a>
+        <a class="btn btn-pill-ghost" href="#quality">How verification works</a>
       </div>
     </div>
-    <div>
-      <div class="hero-photo"><img src="img/hero.jpg" alt="Technician in clean-room garments loading racks of small vials into an industrial lyophilizer" width="1280" height="960"></div>
-      <div class="photo-credit">Lyophilization of pharmaceutical vials. Photo: Integrity Bio, CC BY-SA 3.0 via Wikimedia Commons.</div>
+    <div class="hero-visual">
+      <div class="photo"><img src="img/hero.jpg" alt="Technician in clean-room garments loading racks of small vials into an industrial lyophilizer" width="1280" height="960"></div>
+      <div class="float-doc">
+        <div class="mono-label">Certificate of analysis</div>
+        <div class="lot-line"><span>LOT 2026-C745</span><span class="pass">PASS 99.2%</span></div>
+        <div class="lot-line" style="color:var(--dark-muted);margin-top:4px"><span>HPLC</span><span>MS identity</span></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- FACT STRIP -->
+<!-- FACTS -->
 <div class="facts">
   <div class="wrap">
-    <div class="fact"><b>Lot-matched analysis</b><span>The vial lot, the COA, and the lab report always match</span></div>
+    <div class="fact"><b>Lot-matched analysis</b><span>Vial lot, COA, and lab report always match</span></div>
     <div class="fact"><b>Independent testing</b><span>Third-party HPLC and MS, never self-issued</span></div>
     <div class="fact"><b>Retain samples</b><span>Archived from every received lot</span></div>
-    <div class="fact"><b>RUO only</b><span>We do not sell approved-drug compounds</span></div>
+    <div class="fact"><b>RUO only</b><span>No approved-drug compounds, ever</span></div>
   </div>
 </div>
 
@@ -239,20 +276,22 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
 <section id="catalog">
   <div class="wrap">
     <div class="section-head">
-      <h2>Catalog</h2>
-      <p class="lede">Lyophilized research peptides, sealed and stored cold until dispatch. Pricing below; institutional quotes are confirmed against the current tested lot.</p>
+      <div class="mono-label">Current catalog</div>
+      <h2>Tested lots, ready to ship</h2>
+      <p class="lede">Lyophilized research peptides, sealed and stored cold until dispatch. Institutional quotes are confirmed against the current tested lot before anything is charged.</p>
     </div>
     <div class="products" id="products"></div>
-    <p class="lede" style="font-size:.82rem;margin-top:18px">All materials ship as laboratory reagents with the research-use statement on the label and pack slip. We ship to laboratory and institutional addresses.</p>
+    <p class="order-note">Every vial ships as a laboratory reagent with the research-use statement on the label and pack slip. We ship to laboratory and institutional addresses.</p>
   </div>
 </section>
 
-<!-- QUALITY -->
-<section id="quality" class="alt">
+<!-- QUALITY (dark scene) -->
+<section id="quality" class="dark">
   <div class="wrap">
     <div class="section-head">
-      <h2>Every lot earns its place</h2>
-      <p class="lede">Materials move through five controlled stages before a vial is ever listed for sale.</p>
+      <div class="mono-label">Quality pipeline</div>
+      <h2 style="margin-top:10px">Every lot earns its place</h2>
+      <p class="lede">Five controlled stages stand between a shipment arriving and a vial being listed for sale.</p>
     </div>
     <div class="pipeline">
       <div class="stage"><div class="num">1</div><b>Receive</b><span>Sealed shipments photographed and logged on arrival</span></div>
@@ -264,44 +303,51 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
   </div>
 </section>
 
-<!-- DOCUMENTATION -->
-<section id="docs">
+<!-- COMPARE -->
+<section id="compare">
   <div class="wrap">
-    <div class="docs-grid">
-      <div>
-        <h2>What ships with your order</h2>
-        <ul class="checklist">
-          <li>Lot-specific certificate of analysis matching your vials</li>
-          <li>Independent HPLC chromatogram with purity result</li>
-          <li>Mass-spectrometry identity confirmation</li>
-          <li>Storage and handling sheet for the lyophilized material</li>
-          <li>Research-use statement on the label and pack slip</li>
+    <div class="section-head">
+      <div class="mono-label">The difference</div>
+      <h2 style="margin-top:10px">Ask any supplier one question</h2>
+      <p class="lede">"Show me the chromatogram for the exact lot I would receive." Most cannot. Everything we list already passed.</p>
+    </div>
+    <div class="products" style="grid-template-columns:1fr 1fr" id="compare-grid">
+      <div class="compare-card us">
+        <span class="tag" style="color:var(--accent-deep)">Northvale Reagents</span>
+        <ul>
+          <li>Lot-matched COA published before you buy</li>
+          <li>Independent lab documents, never self-issued</li>
+          <li>Retain sample archived from every lot</li>
+          <li>Failing lots destroyed and logged, never sold</li>
+          <li>Quotes confirmed against the tested lot number</li>
         </ul>
       </div>
-      <div class="coa-card">
-        <h3>Documents for the current lots</h3>
-        <p style="font-size:.88rem;color:var(--muted)">Certificates are published per lot. If a document you need is not listed here yet, request it and we will send the file directly.</p>
-        <div id="coa-files"></div>
-        <p style="font-size:.82rem;margin-top:14px"><a href="#contact">Request a document</a></p>
+      <div class="compare-card them">
+        <span class="tag" style="color:var(--muted)">Typical vendor</span>
+        <ul>
+          <li>Stock COA image, not your lot</li>
+          <li>Self-issued certificates</li>
+          <li>No retained samples</li>
+          <li>Unknown test dates or labs</li>
+          <li>Lot number appears only after purchase</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ORDERING -->
-<section id="ordering" class="alt">
+<section id="ordering" class="pad-sm" style="background:var(--panel,#f5f5f7)">
   <div class="wrap">
     <div class="section-head">
-      <h2>Ordering for institutions</h2>
-      <p class="lede">We process orders as confirmed quotes so the lot number on your paperwork matches the vials in your freezer.</p>
+      <div class="mono-label">Ordering</div>
+      <h2 style="margin-top:10px">Built for institutions</h2>
+      <p class="lede">Quotes, purchase orders, and paperwork that matches the vials in your freezer.</p>
     </div>
     <div class="order-steps">
-      <div class="ostep"><div class="step-label">REQUEST</div><h3>Send your list</h3><p>Build a quote in the catalog or email the list with quantities and your shipping address.</p></div>
-      <div class="ostep"><div class="step-label">CONFIRM</div><h3>We confirm the lot</h3><p>You receive the current lot number, its COA, and a shipping quote before anything is charged.</p></div>
-      <div class="ostep"><div class="step-label">PAY</div><h3>Pay on your terms</h3><p>Institutional purchase order, ACH, or wire. Card processing arrives with our merchant underwriting.</p></div>
-    </div>
-    <div class="notice" style="margin-top:28px">
-      <strong>Who we sell to:</strong> laboratories, universities, CROs, and qualified research organizations. Orders that cannot describe an institutional research context are cancelled and refunded in full.
+      <div class="ostep"><div class="step-label">Request</div><h3>Send your list</h3><p>Build a quote in the catalog or email the list with quantities and your shipping address.</p></div>
+      <div class="ostep"><div class="step-label">Confirm</div><h3>We confirm the lot</h3><p>You receive the current lot number, its COA, and a shipping quote before anything is charged.</p></div>
+      <div class="ostep"><div class="step-label">Pay</div><h3>Pay on your terms</h3><p>Institutional purchase order, ACH, or wire. Card processing arrives with our merchant underwriting.</p></div>
     </div>
   </div>
 </section>
@@ -313,7 +359,7 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
     <div id="full-disclaimer-notice" class="notice" style="margin-bottom:26px"></div>
     <details>
       <summary>Returns</summary>
-      <div class="body">Unopened, intact vials may be returned within 14 days of delivery for replacement or refund of the reagent cost. Opened or temperature-abused materials cannot be accepted. Failed-in-analysis materials are replaced when the independent document supports the claim.</div>
+      <div class="body">Unopened, intact vials may be returned within 14 days of delivery for replacement or refund of the reagent cost. Opened or temperature-abused materials cannot be accepted. Materials that fail in your analysis are replaced when the independent document supports the claim.</div>
     </details>
     <details>
       <summary>Shipping</summary>
@@ -330,8 +376,21 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
   </div>
 </section>
 
+<!-- CTA BAND -->
+<section class="pad-sm">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Ready when your lab is.</h2>
+        <p>Current lot documents are one email away. Quotes answered within one business day.</p>
+      </div>
+      <a class="btn btn-primary" href="#catalog">Start a quote</a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
-<section id="contact" class="alt">
+<section id="contact" class="pad-sm" style="background:var(--panel,#f5f5f7)">
   <div class="wrap" style="max-width:820px">
     <h2>Contact</h2>
     <p class="lede" style="margin-bottom:8px">Quotes, documents, and institutional inquiries.</p>
@@ -349,7 +408,7 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
     </div>
     <div>
       <h4>Site</h4>
-      <p><a href="#catalog">Catalog</a><br><a href="#quality">Quality</a><br><a href="#docs">Documentation</a><br><a href="#policies">Policies</a></p>
+      <p><a href="#catalog">Catalog</a><br><a href="#quality">Quality</a><br><a href="#compare">Why us</a><br><a href="#policies">Policies</a></p>
     </div>
     <div>
       <h4>Entity</h4>
@@ -368,7 +427,7 @@ footer .legal{border-top:1px solid #2a373b;margin-top:36px;padding-top:20px;font
 <div id="quotebar">
   <div class="wrap">
     <div class="summary" id="bar-summary">No items selected</div>
-    <button class="btn btn-primary" id="bar-btn">Request quote</button>
+    <button class="btn btn-primary" id="bar-btn" style="background:#fff;color:#0a5c54">Request quote</button>
   </div>
 </div>
 
@@ -385,13 +444,17 @@ const CATALOG = fetch('data/catalog.json').then(r=>r.json());
 
   // products
   const wrap = document.getElementById('products');
-  data.products.forEach(p => {
+  data.products.forEach((p) => {
     const el = document.createElement('div');
     el.className = 'product';
     el.innerHTML = `
-      <div class="sku-row"><span class="cat">${p.sku}</span><span class="price">$${p.price.toFixed(2)}</span></div>
+      <div class="top">
+        <span class="sku">${p.sku}</span>
+        <span class="stock-pill ok">${p.sku === 'GHKCU-50' ? 'Most requested' : 'Lot verified'}</span>
+      </div>
       <h3>${p.name}</h3>
       <div class="format">${p.size}</div>
+      <div class="top" style="margin-bottom:14px"><span></span><span class="price">$${p.price.toFixed(2)} <small>/ vial</small></span></div>
       <div class="spec"><span>Purity</span><b>${p.purity_claim}</b></div>
       <div class="spec"><span>CAS</span><b>${p.cas}</b></div>
       <div class="spec"><span>Documents</span><b>HPLC + MS, lot-matched</b></div>
@@ -401,11 +464,6 @@ const CATALOG = fetch('data/catalog.json').then(r=>r.json());
         <a class="coa" href="${p.coa}" target="_blank">Lot COA</a>
       </div>`;
     wrap.appendChild(el);
-
-    const cf = document.createElement('div');
-    cf.className = 'file';
-    cf.textContent = p.coa.split('/').pop();
-    document.getElementById('coa-files').appendChild(cf);
   });
 
   // gate
@@ -428,12 +486,10 @@ const CATALOG = fetch('data/catalog.json').then(r=>r.json());
   // cart + quote bar
   const bar = document.getElementById('quotebar');
   const barSummary = document.getElementById('bar-summary');
-  function cartItems(){
-    return [...document.querySelectorAll('.qty')].filter(q => +q.value > 0);
-  }
+  function cartItems(){ return [...document.querySelectorAll('.qty')].filter(q => +q.value > 0); }
   function updateBar(){
     const items = cartItems();
-    if (!items.length){ bar.classList.remove('show'); barSummary.textContent = 'No items selected'; return; }
+    if (!items.length){ bar.classList.remove('show'); return; }
     let total = 0; const parts = [];
     items.forEach(q => { const line = +q.value * +q.dataset.price; total += line; parts.push(q.dataset.sku + ' x' + q.value); });
     barSummary.innerHTML = parts.join(', ') + ' &nbsp;<b>$' + total.toFixed(2) + '</b>';
@@ -447,7 +503,6 @@ const CATALOG = fetch('data/catalog.json').then(r=>r.json());
       updateBar();
     }
   });
-
   function buildQuote(){
     const items = cartItems();
     if (!items.length){ alert('Select quantities in the catalog first.'); return; }
