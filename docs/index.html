@@ -439,7 +439,7 @@ const CATALOG = fetch('data/catalog.json').then(r=>r.json());
   document.getElementById('full-disclaimer-notice').textContent = data.store.disclaimer_full;
   document.getElementById('footer-entity').innerHTML = data.store.entity + '<br>' + data.store.email;
   document.getElementById('contact-block').innerHTML =
-    '<strong>' + data.store.name + '</strong><br>Email: <a href="mailto:' + data.store.email + '">' + data.store.email + '</a><br>Phone and registered address published on LLC formation.';
+    '<strong>' + data.store.name + '</strong><br>30 N Gould St Ste R, Sheridan, WY 82801<br>Email: <a href="mailto:' + data.store.email + '">' + data.store.email + '</a><br>Telephone: +1 (307) 414-0147';
   document.getElementById('copyright').textContent = '© 2026 ' + data.store.name + '.';
 
   // products

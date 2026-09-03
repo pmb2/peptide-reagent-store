@@ -1,7 +1,7 @@
 # Northvale Reagents — Bootstrap Peptide Reagent Store
 
 A **research-reagent (RUO) storefront + operations toolkit** built from the Grok
-peptide e-commerce research. Name is a placeholder — swap after counsel review.
+peptide e-commerce research. Entity: Northvale Reagents LLC (Wyoming).
 
 ## What's here
 

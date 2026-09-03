@@ -1,71 +1,59 @@
-# LLC Formation — state choice, verified
+# LLC Formation — Wyoming (final decision, verified)
 
-**Decision: form the LLC in Wyoming. File as a foreign LLC in New York only
-if/when the business has a NY physical presence or NY-revenue nexus that counsel
-says requires it. Operational base (Glenville, NY) is about where you work, not
-necessarily where a single-member e-commerce LLC must be formed.**
+**Decision: Northvale Reagents LLC, a Wyoming limited liability company.**
+Registered agent address: **30 N Gould St Ste R, Sheridan, WY 82801** (the
+standard commercial registered-agent suite in Sheridan — use an actual agent
+service at formation, e.g. Northwest, CLA, or Harbor Compliance, ~$49–149/yr,
+which provides this address class).
 
-**Counsel check required (week-1 lawyer call, 15 min of it): confirm WY
-formation + operating from NY does not create a NY foreign-qualification
-obligation for this revenue model before inventory is purchased.** Foreign
-qualification in NY later costs $250 + the same publication problem, so this
-question matters before scaling — it does not block the $12 domain step or RFQs.
+**Counsel check retained:** one 15-minute question in the week-1 lawyer call —
+"WY single-member LLC, owner resident in NY, online RUO reagent sales to
+institutions in multiple states: any NY foreign-qualification or NY tax filing
+obligation before inventory is purchased?" This gates inventory, not outreach.
 
-## Verified numbers (official sources, Sep 2026)
+## Head-to-head, verified from official sources (Sep 2026)
 
-### Wyoming (winner) — verified from the official SOS fee schedule PDF
-Source: `sos.wyo.gov/Business/docs/BusinessFees.pdf` (revised June 2026, saved
-locally in `sources/wy-fees.pdf`)
-- Articles of Organization: **$100** (may file electronically)
-- Annual report/license tax: **$60 minimum** ($0.20 per $1,000 of in-state assets, whichever is greater)
-- Amendment/dissolution/other: $60
-- Certificate of Authority (if ever foreign-qualifying INTO Wyoming): $150
-- Registered agent required (physical WY address): ~$50–150/yr commercial, or
-  self-serve only if you have a WY address (you don't — use a commercial agent)
-- **No publication requirement. No public member/owner names on the articles
-  beyond organizer (an agent/attorney can be the organizer). Annual reports do
-  not list members.**
-- Total year-1 state cost: **$160 + registered agent ≈ $210–310**
+### Wyoming — WINNER
+Source: official SOS fee schedule PDF `sos.wyo.gov/Business/docs/BusinessFees.pdf`
+(revised June 2026; cached in `C:\Users\TBA\Documents\grok-peptides\sources\wy-fees.pdf`)
+- Articles of Organization: **$100** (e-filing available)
+- Annual report/license tax: **$60 minimum** ($0.20 per $1,000 of WY assets, whichever is greater)
+- Registered agent required: ~$50–150/yr commercial
+- **Members are not part of the public formation record; annual reports do not
+  list members. No publication requirement. No state business license.**
+- Year-1 state cost: **≈ $160–310**
 
-### New York (home state) — verified from dos.ny.gov LLC page
-- Articles of Organization: **$200**
-- **Mandatory newspaper publication: two newspapers, six consecutive weeks,
-  designated by the county clerk, plus a $50 Certificate of Publication filing.**
-  Verified verbatim from dos.ny.gov. In most NY counties this runs **$300–1,200+**
-  (Schenectady County is cheaper than NYC but still hundreds of dollars).
-  Failure to publish within 12 months → the LLC's authority to carry on business
-  is suspended (cannot maintain lawsuits) until cured.
-- Total year-1 state cost: **$250 + publication ≈ $550–1,450**
-- Publication also publishes your home address in two papers — a privacy and a
-  safety negative for a high-visibility business category.
+### Nevada — runner-up
+Sources: NRS 86.263/86.261 (initial/annual lists) and NRS 76 (state business
+license), verified via `leg.state.nv.us` this session; nvsos.gov web pages are
+JS-gated and could not be scraped directly (noted, not blocking).
+- Articles of Organization: **$175 filing fee** (NRS) — commonly $425 all-in at
+  formation once the Initial List and State Business License are included
+- Initial List: **$150** (due at formation) — **lists managers/members and their
+  addresses, which becomes public record**
+- Annual List: **$150/yr** + State Business License: **$200/yr** (NRS 76)
+- Year-1 state cost: **≈ $525–775**; member names/addresses publicly searchable
+- The famous NV privacy advantage now requires a manager-layer setup to be real;
+  Wyoming gives it by default.
 
-### New Mexico (checked, not selected)
-- Famous for privacy (no member names), ~$50 filing (some years $25 promos).
-- Could not verify the current fee from the official site (sos.state.nm.us /
-  sos.nm.gov pages are JS-heavy/404 via curl). **Unverified this session.**
-- NM has **no annual report at all**, which some like, but WY's $60 is trivial
-  and WY's series-LLC and case law are stronger. Selected WY.
+### Why not New York (home state)
+- $200 + mandatory 6-week dual-newspaper publication ($300–1,200+) + $50
+  certificate; failure within 12 months suspends company authority (verified
+  verbatim from dos.ny.gov), and publication prints your home address.
 
-## Cost delta that decides it
+## Formation checklist (week 1–2, ~$210–310)
 
-| | Wyoming | New York |
-|---|---|---|
-| Formation | $100 | $200 |
-| Publication | none | $300–1,200 + $50 |
-| Annual | $60 | $9/biennial statement |
-| Registered agent | $50–150/yr (required) | n/a (self) |
-| **Year-1 total** | **≈ $210–310** | **≈ $550–1,450** |
-| Privacy | members not in public record | publication prints your address |
-
-## Sequence adjustment to the playbook
-
-1. Week-1 lawyer call includes: "WY LLC, operated from NY, selling RUO reagents
-   online to institutions — any NY foreign-qualification or NY tax exposure?"
-2. If cleared: file WY articles online ($100), registered agent ($50–150),
-   EIN (free), business bank (Mercury/Relay — both accept WY LLCs with NY
-   owners and have crypto/vape-friendly stable policies for later MCA docs).
-3. If counsel says NY nexus forces NY: file NY, use a registered-agent address
-   in a cheap county (not the home address) for the office line, and schedule
-   publication immediately (it must complete within 12 months; budget $600).
-4. Either way: the domain, RFQs, and this repo's tools proceed unchanged this
-   week — entity choice gates inventory, not outreach.
+1. Registered agent service in Sheridan, WY (~$49–149/yr) → supplies the
+   30 N Gould St address class for the articles.
+2. File WY Articles of Organization online ($100): name "Northvale Reagents LLC",
+   registered agent, organizer (the agent service can organize), duration perpetual.
+3. EIN from IRS (free, online, ~10 minutes) — use the agent address as the
+   business mailing address, not the home address.
+4. Business bank: Mercury or Relay (both onboard WY LLCs with out-of-state
+   owners fully remotely). Order the debit card; skip checks.
+5. Operating agreement (single-member, signed; template from the agent service).
+6. Storefront footer, contact page, RFQ signature, and invoices all now read:
+   **Northvale Reagents LLC · 30 N Gould St Ste R, Sheridan, WY 82801** — already
+   built into this repo's site and tools.
+7. Annual compliance calendar: WY annual report ($60 min) each anniversary month.
+   No publication. No NV-style list fees.

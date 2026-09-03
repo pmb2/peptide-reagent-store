@@ -43,8 +43,9 @@ We independently verify every lot before distribution, and we reorder on quality
 We do not purchase compounds that duplicate FDA-approved drug molecules.
 
 Regards,
-Northvale Reagents
-[pending LLC name / address / phone]
+Northvale Reagents LLC
+30 N Gould St Ste R, Sheridan, WY 82801
++1 (307) 414-0147
 orders@northvalereagents.com
 """
     return body

@@ -41,11 +41,11 @@ No GLP-1s, no approved-drug molecules, no protocols, no outcome copy, ever.
 1. Buy domain, wire to Pages, create `orders@` mailbox (Zoho free tier).
 2. One-hour consult with a food-and-drug lawyer ($400–750 — this is the one
    cash item NOT in the $100; save for it or defer inventory one week). Ask:
-   RUO resale to individuals in NY, SKUs to avoid, residential shipping policy.
-3. File NY LLC online ($200 — again outside the $100; sequence at week 2–3 from
-   savings/revenue). Glenville/Schenectady office keeps publication upstate.
-   Publication must complete within 120 days.
-4. EIN (free, same day). Business checking. Never mix funds.
+   RUO resale to individuals, SKUs to avoid, residential shipping policy, and
+   the WY-LLC-from-NY foreign-qualification question in `LLC-STATE-DECISION.md`.
+3. File the Wyoming LLC online ($100 via a Sheridan registered-agent service —
+   see `LLC-STATE-DECISION.md`); EIN same day; Mercury/Relay bank account.
+4. Business checking. Never mix funds.
 
 ### Week 2 — suppliers ($0 until quotes land)
 5. Send RFQs via `python tools/rfq_generator.py --supplier "<name>" --contact <email>`
@@ -91,7 +91,7 @@ No GLP-1s, no approved-drug molecules, no protocols, no outcome copy, ever.
 | Shopify/warehouse-apps de-platforming | Static own-domain site (Pages) + invoice rails |
 | Supplier clones storefront/customer list | Quality agreement clause in RFQ; brand files owned by us |
 | Cash trapped in processor reserve | Plan cash as if 10% doesn't exist for 180 days |
-| NY LLC publication lapse (120d) | Calendar it at formation |
+| NY publication lapse (120d) | Moot: WY LLC, no publication. Calendar the WY annual report instead |
 | Personal-use orders polluting intended use | Attestation + cancel-and-refund discipline |
 | GLP-1 gravity (easy money temptation) | Hard no — blocked in catalog data and this playbook |
 

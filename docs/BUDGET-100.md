@@ -36,7 +36,7 @@ burn money.**
   an invoice/quote flow (email a typed attestation form) until a processor is live.
 - No ads until 20+ clean orders (conversation's own rule) — ads are Month 2+ spend,
   funded by margin, not the $100.
-- LLC ($200) is deliberately NOT in the $100: it is the first use of sales revenue or
+- WY LLC ($100 + agent) is deliberately NOT in the $100: it is the first use of sales revenue or
   saved cash at week 2–3. Selling research reagents pre-LLC as a sole proprietor is
   possible but counsel-flagged; the playbook sequences LLC formation before any
   inventory purchase.
